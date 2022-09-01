@@ -1,0 +1,25 @@
+//font sizes
+.font-xs {
+    font-size: $font-xs;
+}
+.font-sm {
+    font-size: $font-sm;
+}
+.font-md {
+    font-size: $font-md;
+}
+.font-lg {
+    font-size: $font-lg;
+}
+.font-xl {
+    font-size: $font-xl;
+}
+
+
+//font weights
+@each $key, $val in $font-weights {
+    .font-#{$key} {
+        font-weight: $val;
+    }
+}
+
