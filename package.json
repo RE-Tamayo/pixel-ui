@@ -1,0 +1,22 @@
+{
+  "name": "pixel-ui",
+  "version": "1.0.0",
+  "description": "A simple and lightweight css framework built for fast prototyping.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RE-Tamayo/pixel-ui.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "RE-Tamayo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RE-Tamayo/pixel-ui/issues"
+  },
+  "homepage": "https://github.com/RE-Tamayo/pixel-ui#readme"
+}
