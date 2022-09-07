@@ -6,37 +6,22 @@ $red: #e61919;
 $yellow: #e6e619;
 $green: #19e635;
 $orange: #ffa600;
-$purple: #9900ff;
+$violet: #9b26b6;
 $white: #ffffff;
 $black: #000000;
 $gray: #808080;
 
-
-//theme colors
-$primary: #326dee;
-$success: #1ac888;
-$error: #d32752;
-$warning: #f6c31c;
-$info: #5bbdff;
-$fade: #dfdfdf;
-
 //color pallete
 $colors: (
-    "blue": $blue,
+    "blu": $blue,
     "red": $red,
-    "yellow": $yellow,
-    "green": $green,
-    "orange": $orange,
-    "purple": $purple,
-    "white": $white,
-    "black": $black,
-    "gray": $gray,
-    "primary": $primary,
-    "success": $success,
-    "error": $error,
-    "warning": $warning,
-    "info": $info,
-    "fade": $fade
+    "ylw": $yellow,
+    "grn": $green,
+    "org": $orange,
+    "vio": $violet,
+    "wht": $white,
+    "blk": $black,
+    "gry": $gray
 );
 
 //spacing

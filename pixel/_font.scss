@@ -1,24 +1,24 @@
 //font sizes
-.font-xs {
+.txt-xs {
     font-size: $font-xs;
 }
-.font-sm {
+.txt-sm {
     font-size: $font-sm;
 }
-.font-md {
+.txt-md {
     font-size: $font-md;
 }
-.font-lg {
+.txt-lg {
     font-size: $font-lg;
 }
-.font-xl {
+.txt-xl {
     font-size: $font-xl;
 }
 
 
 //font weights
 @each $key, $val in $font-weights {
-    .font-#{$key} {
+    .txt-wt-#{$key} {
         font-weight: $val;
     }
 }

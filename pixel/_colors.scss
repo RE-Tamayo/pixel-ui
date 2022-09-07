@@ -1,9 +1,9 @@
 @each $key, $val in $colors {
-    .tx-#{$key} {
+    .txt-#{$key} {
         color: $val;
     }
 
-    .tx-hv-#{$key} {
+    .txt-hov-#{$key} {
         &:hover {
             color: $val
         }
@@ -13,30 +13,31 @@
         background-color: $val;
     }
 
-    .bg-hv-#{$key} {
+    .bg-hov-#{$key} {
         &:hover {
             background-color: $val;
         }
     }
 
     @if($val != #000000 and $val != #ffffff) {
+        
         //light variations
         @for $i from 1 through 9 {
-            .tx-#{$key}-lt-#{$i} {
+            .txt-#{$key}-l#{$i} {
                 color: mix(#ffffff, $val, $i * 10)
             }
 
-            .tx-hv-#{$key}-lt-#{$i} {
+            .txt-hov-#{$key}-l#{$i} {
                 &:hover {
                     color: mix(#ffffff, $val, $i * 10)
                 }
             }
 
-            .bg-#{$key}-lt-#{$i} {
+            .bg-#{$key}-l#{$i} {
                 background-color: mix(#ffffff, $val, $i * 10)
             }
 
-            .bg-hv-#{$key}-lt-#{$i} {
+            .bg-hov-#{$key}-l#{$i} {
                 &:hover {
                     background-color: mix(#ffffff, $val, $i * 10)
                 }
@@ -45,21 +46,21 @@
 
         //dark variations
         @for $i from 1 through 9 {
-            .tx-#{$key}-dk-#{$i} {
+            .txt-#{$key}-d#{$i} {
                 color: mix(#000000, $val, $i * 10)
             }
 
-            .tx-hv-#{$key}-dk-#{$i} {
+            .txt-hov-#{$key}-d#{$i} {
                 &:hover {
                     color: mix(#000000, $val, $i * 10)
                 }
             }
 
-            .bg-#{$key}-dk-#{$i} {
+            .bg-#{$key}-d#{$i} {
                 background-color: mix(#000000, $val, $i * 10)
             }
 
-            .bg-hv-#{$key}-dk-#{$i} {
+            .bg-hov-#{$key}-d#{$i} {
                 &:hover {
                     background-color: mix(#000000, $val, $i * 10)
                 }

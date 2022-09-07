@@ -1,3 +1,4 @@
+//round buttons
 @mixin btn($bg-color: #e2e2e2) {
     text-decoration: none;
     cursor: pointer;
@@ -12,7 +13,6 @@
     @include btn;
 }
 
-
 @each $key, $val in $colors {
     .btn-#{$key} {
         @include btn($val);
@@ -23,9 +23,109 @@
     .btn-ol-#{$key} {
         @include btn(transparent);
         border: $base-border-thickness solid $val;
+        color: $val;
         &:hover {
             background-color: $val;
             color: #ffffff;
+        }
+    }
+
+    @if($val != #000000 and $val != #ffffff) {
+        
+        //light variations
+        @for $i from 1 through 9 {
+            .btn-#{$key}-l#{$i} {
+                @include btn(mix(#ffffff, $val, $i * 10));
+            }
+
+            .btn-ol-#{$key}-l#{$i} {
+                &:hover {
+                    @include btn(transparent);
+                    border: $base-border-thickness solid mix(#ffffff, $val, $i * 10);
+                    color: mix(#ffffff, $val, $i * 10)
+                }
+            }
+        }
+
+        //dark variations
+        @for $i from 1 through 9 {
+            .btn-#{$key}-d#{$i} {
+                @include btn(mix(#000000, $val, $i * 10));
+            }
+
+            .btn-ol-#{$key}-d#{$i} {
+                &:hover {
+                    @include btn(transparent);
+                    border: $base-border-thickness solid mix(#000000, $val, $i * 10);
+                    color: mix(#000000, $val, $i * 10);
+                }
+            }
+        }
+    }
+}
+
+//square buttons
+@mixin btn-sq($bg-color: #e2e2e2) {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    padding: $base-padding $base-padding * 2;
+    border-radius: 2px;
+    background-color: $bg-color;
+}
+
+.btn-sq {
+    @include btn-sq;
+}
+
+@each $key, $val in $colors {
+    .btn-sq-#{$key} {
+        @include btn-sq($val);
+        &:hover {
+            background-color: lighten($val, 5)
+        }
+    }
+    .btn-sq-ol-#{$key} {
+        @include btn-sq(transparent);
+        border: $base-border-thickness solid $val;
+        color: $val;
+        &:hover {
+            background-color: $val;
+            color: #ffffff;
+        }
+    }
+
+    @if($val != #000000 and $val != #ffffff) {
+        
+        //light variations
+        @for $i from 1 through 9 {
+            .btn-#{$key}-l#{$i} {
+                @include btn(mix(#ffffff, $val, $i * 10));
+            }
+
+            .btn-ol-#{$key}-l#{$i} {
+                &:hover {
+                    @include btn(transparent);
+                    border: $base-border-thickness solid mix(#ffffff, $val, $i * 10);
+                    color: mix(#ffffff, $val, $i * 10)
+                }
+            }
+        }
+
+        //dark variations
+        @for $i from 1 through 9 {
+            .btn-sq-#{$key}-d#{$i} {
+                @include btn-sq(mix(#000000, $val, $i * 10));
+            }
+
+            .btn-sq-ol-#{$key}-d#{$i} {
+                &:hover {
+                    @include btn-sq(transparent);
+                    border: $base-border-thickness solid mix(#000000, $val, $i * 10);
+                    color: mix(#000000, $val, $i * 10);
+                }
+            }
         }
     }
 }
