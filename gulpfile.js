@@ -1,5 +1,6 @@
 const { src, dest, watch, series} = require("gulp");
 const sass = require('gulp-sass')(require("sass"));
+const cleanCSS = require('gulp-clean-css');
 
 function buildStyles() {
     return src('pixel/**/*.scss')
@@ -7,8 +8,15 @@ function buildStyles() {
     .pipe(dest('css'));
 }
 
-function watchChanges() {
-    watch(['pixel/**/*.scss'], buildStyles);
+function buildMinStyles() {
+    return src('pixel/**/*.scss')
+    .pipe(sass())
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(dest('css/min'));
 }
 
-exports.default = series(buildStyles, watchChanges);
+function watchChanges() {
+    watch(['pixel/**/*.scss'], buildStyles, buildMinStyles);
+}
+
+exports.default = series(buildStyles, buildMinStyles, watchChanges);
